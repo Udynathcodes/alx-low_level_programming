@@ -1,14 +1,14 @@
 #include "lists.h"
 /**
-  * add_node_end - adds anew node
-  * @head: node
-  * @str: struing to be added
-  * Return: address of the new element
+  * add_node - create a new node
+  * @head: null head
+  * @str: string to be passed
+  * Return: pointer to the node
   */
-list_t *add_node_end(list_t **head, const char *str)
+list_t *add_node(list_t **head, const char *str)
 {
 	int i, count = 0;
-	list_t *new, *temp;
+	list_t *new;
 
 	char *dup = strdup(str);
 
@@ -23,20 +23,8 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	new->str = dup;
 	new->len = count;
-	new->next = NULL;
+	new->next = *head;
+	*head = new;
 
-	if (*head == NULL)
-	{
-		*head = new;
-	}
-	else
-	{
-		temp = *head;
-		while (temp->next != NULL)
-		{
-			temp = temp->next;
-		}
-		temp->next = new;
-	}
-	return (new);
+	return (*head);
 }
