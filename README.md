@@ -1,1 +1,3 @@
-0x06. C - More pointers, arrays and strings
+0x15. C - File I/O, alx project . And it was done by:
+ 
+* UDUAK-OBONG UWAH.
